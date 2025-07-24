@@ -175,14 +175,14 @@ const Header = ({ navigate, userId, isAuthReady }) => {
     <header className="bg-gradient-to-r from-blue-800 to-blue-600 text-white shadow-lg sticky top-0 z-30">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between flex-wrap">
         {/* Logo and School Name */}
-        <div className="flex items-center space-x-3 cursor-pointer" onClick={() => navigate('home')}>
-          {/* Placeholder for School Emblem/Logo */}
+        <div className="flex items-center space-x-3 cursor-pointer group" onClick={() => navigate('home')}>
+          {/* School Emblem/Logo */}
           <img
-            src="https://placehold.co/60x60/002366/FFFFFF?text=PEBS"
+            src="image_2dd6aa.jpg" // Updated to use the uploaded school logo
             alt="Pathibhara English Boarding School Logo"
-            className="rounded-full shadow-md"
+            className="rounded-full shadow-md transition-transform duration-300 group-hover:scale-110"
           />
-          <h1 className="text-2xl font-bold text-gold-300 tracking-wide">
+          <h1 className="text-2xl font-bold text-gold-300 tracking-wide transition-colors duration-300 group-hover:text-white">
             Pathibhara English Boarding School
           </h1>
         </div>
@@ -286,11 +286,11 @@ const HomePage = ({ navigate, handlePayment }) => {
     <div className="space-y-12">
       {/* Hero Banner */}
       <section className="relative bg-blue-900 rounded-xl shadow-lg overflow-hidden h-[400px] md:h-[500px] lg:h-[600px] flex items-center justify-center text-center">
-        {/* Placeholder for video background. Using an image for simplicity. */}
+        {/* Updated to use the new school building image */}
         <img
-          src="https://placehold.co/1200x600/003366/FFFFFF?text=Pathibhara+School+Building"
-          alt="School Building"
-          className="absolute inset-0 w-full h-full object-cover opacity-70"
+          src="image_2dd3a0.jpg"
+          alt="Pathibhara English Boarding School Building"
+          className="absolute inset-0 w-full h-full object-cover opacity-70 transition-opacity duration-500"
         />
         <div className="relative z-10 p-6 bg-black bg-opacity-40 rounded-lg max-w-2xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-extrabold text-white leading-tight mb-4 drop-shadow-lg">
@@ -302,13 +302,13 @@ const HomePage = ({ navigate, handlePayment }) => {
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
             <button
               onClick={() => navigate('admission')}
-              className="px-8 py-3 bg-gold-500 text-blue-900 font-bold rounded-full shadow-lg hover:bg-gold-600 transition-transform transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-gold-300"
+              className="px-8 py-3 bg-gold-500 text-blue-900 font-bold rounded-full shadow-lg hover:bg-gold-600 transition-transform transform hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-gold-300"
             >
               Apply Now
             </button>
             <button
               onClick={() => navigate('about')}
-              className="px-8 py-3 border-2 border-white text-white font-bold rounded-full shadow-lg hover:bg-white hover:text-blue-900 transition-transform transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-white"
+              className="px-8 py-3 border-2 border-white text-white font-bold rounded-full shadow-lg hover:bg-white hover:text-blue-900 transition-transform transform hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-white"
             >
               Learn More
             </button>
@@ -351,7 +351,7 @@ const HomePage = ({ navigate, handlePayment }) => {
       {/* Principal's Message */}
       <section className="bg-white p-8 rounded-xl shadow-lg flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-8">
         <img
-          src="https://placehold.co/150x150/002366/FFFFFF?text=Principal"
+          src="image_2dd344.png" // Updated to use the uploaded image
           alt="Principal's Photo"
           className="w-36 h-36 rounded-full object-cover shadow-md border-4 border-blue-100"
         />
@@ -459,26 +459,26 @@ const HomePage = ({ navigate, handlePayment }) => {
 
 // Feature Card Component
 const FeatureCard = ({ icon, title, description }) => (
-  <div className="bg-blue-50 p-6 rounded-lg shadow-md flex flex-col items-center text-center transition-transform transform hover:scale-105 hover:shadow-xl">
-    <div className="text-5xl mb-4 text-blue-700">{icon}</div>
-    <h4 className="text-xl font-semibold text-blue-800 mb-2">{title}</h4>
+  <div className="bg-blue-50 p-6 rounded-lg shadow-md flex flex-col items-center text-center transition-transform transform hover:scale-105 hover:shadow-xl group">
+    <div className="text-5xl mb-4 text-blue-700 transition-colors duration-300 group-hover:text-gold-600">{icon}</div>
+    <h4 className="text-xl font-semibold text-blue-800 mb-2 transition-colors duration-300 group-hover:text-blue-900">{title}</h4>
     <p className="text-gray-600">{description}</p>
   </div>
 );
 
 // News Item Component
 const NewsItem = ({ icon, title, date, description, linkText, onLinkClick }) => (
-  <div className="bg-blue-50 p-6 rounded-lg shadow-md flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-6">
-    <div className="text-5xl text-blue-700 flex-shrink-0">{icon}</div>
+  <div className="bg-blue-50 p-6 rounded-lg shadow-md flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-6 transition-transform transform hover:scale-[1.01] hover:shadow-xl group">
+    <div className="text-5xl text-blue-700 flex-shrink-0 transition-colors duration-300 group-hover:text-gold-600">{icon}</div>
     <div className="flex-grow">
-      <h4 className="text-xl font-semibold text-blue-800 mb-1">{title}</h4>
+      <h4 className="text-xl font-semibold text-blue-800 mb-1 transition-colors duration-300 group-hover:text-blue-900">{title}</h4>
       <p className="text-sm text-gray-500 mb-2">{date}</p>
       <p className="text-gray-700">{description}</p>
     </div>
     {onLinkClick && (
       <button
         onClick={onLinkClick}
-        className="mt-4 sm:mt-0 px-5 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="mt-4 sm:mt-0 px-5 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-md hover:shadow-lg"
       >
         {linkText}
       </button>
@@ -651,7 +651,7 @@ const AcademicsPage = () => (
           </tbody>
         </table>
       </div>
-      <button className="mt-6 px-6 py-3 bg-gold-500 text-blue-900 font-bold rounded-full hover:bg-gold-600 transition-colors duration-200 shadow-md">
+      <button className="mt-6 px-6 py-3 bg-gold-500 text-blue-900 font-bold rounded-full hover:bg-gold-600 transition-colors duration-200 shadow-md hover:shadow-lg">
         Download Full Schedule (PDF)
       </button>
     </section>
@@ -869,7 +869,7 @@ const AdmissionPage = ({ handlePayment }) => {
       </section>
 
       {/* Download Form Button */}
-      <section className="bg-white p-8 rounded-xl shadow-lg text-center">
+      <section className="bg-white p-8 rounded-xl shadow-lg">
         <h3 className="text-3xl font-bold text-blue-700 mb-4">Prefer Offline?</h3>
         <p className="text-gray-700 mb-6">Download our admission form and submit it manually at the school office.</p>
         <button className="px-8 py-3 bg-gold-500 text-blue-900 font-bold rounded-full shadow-lg hover:bg-gold-600 transition-transform transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-gold-300">
@@ -970,6 +970,8 @@ const FacilitiesPage = () => (
 // Gallery Page
 const GalleryPage = () => {
   const photos = [
+    { src: "image_2dd3a0.jpg", alt: "Pathibhara School Building Exterior" }, // New image
+    { src: "image_2dd3c7.jpg", alt: "Pathibhara School Campus View" },    // New image
     { src: "https://placehold.co/400x300/E0E7FF/002366?text=Classroom+1", alt: "Classroom Activity" },
     { src: "https://placehold.co/400x300/E0E7FF/002366?text=Sports+Day", alt: "Annual Sports Day" },
     { src: "https://placehold.co/400x300/E0E7FF/002366?text=Science+Fair", alt: "Science Fair Project" },
@@ -1073,12 +1075,12 @@ const ContactPage = () => {
                   <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 8.12 11.12 7 12.5 7H15v3h-2c-.55 0-1 .45-1 1v1h3v3h-3v6.95c5.05-.72 9-4.99 9-9.95z" />
                 </svg>
                 <a
-                  href="https://fb.com/PathibharaSchool"
+                  href="https://www.facebook.com/profile.php?id=100063819312891"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-blue-700 hover:underline"
                 >
-                  fb.com/PathibharaSchool
+                  facebook.com/PathibharaSchool
                 </a>
               </div>
             </div>
@@ -1185,7 +1187,7 @@ const Footer = () => (
           <span>Location</span>
         </a>
         <a
-          href="https://fb.com/PathibharaSchool"
+          href="https://www.facebook.com/profile.php?id=100063819312891"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-white transition-colors duration-200 flex items-center space-x-2"
